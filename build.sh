@@ -19,6 +19,7 @@ sudo service docker start
 sudo usermod -a -G docker ec2-user
 
 echo "Setting up Docker
+cd ~/
 mkdir rstudio_container
 cd ~/rstudio_container
 sudo chmod 777 rstudio_container/
