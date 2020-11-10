@@ -34,9 +34,10 @@ if [ -d "~/R-Docker-Server" ]; then
     git clone https://github.com/trenchproject/R-Docker-Server.git
 fi
 
-#cd ~/R-Docker-Server
+cd ~/R-Docker-Server
 echo "Building RShiny server"
-docker build -t shiny-server ~/R-Docker-Server/.
+ls
+docker build -t shiny-server .
 echo "Running RShiny server"
 sudo docker run -d -p 80:3838 -v /srv/shinyapps/:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server
 
