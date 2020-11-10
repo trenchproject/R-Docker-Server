@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Parse command line args
 while getopts u:p: flag
 do
