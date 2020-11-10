@@ -34,7 +34,7 @@ then
     echo "Shiny-Docker-Server has been cloned " 
 else
     echo "Warning: Shiny-Docker-Server does not exist where expected, attempting to pull."
-    git clone https://github.com/trenchproject/Shiny-Docker-Server.git
+    git clone https://github.com/trenchproject/R-Docker-Server.git
 fi
 
 cd Shiny-Docker-Server
@@ -52,3 +52,9 @@ git clone https://github.com/trenchproject/RShiny_Lizards.git
 echo "The following apps have been pulled to the shiny server"
 ls -l
 echo "Debug logs are available at /srv/shinylog/"
+echo "The following images are ready to be ran"
+docker images 
+echo "The following containers are currently running"
+docker ps 
+echo "more commands can be found using docker --help"
+
