@@ -28,11 +28,11 @@ sudo docker run -e PASSWORD=$passwd -d -p 8787:8787 -v /home/ec2-user/rstudio_do
 echo "RStudio server is now online, connect in a browser at my_public_ip:8787"
 echo "Shared filesystem is located at /home/ec2-user/rstudio_docker/"
 
-if [ -d "~/Shiny-Docker-Server" ] 
+if [ -d "~/R-Docker-Server" ] 
 then
-    echo "Shiny-Docker-Server has been cloned " 
+    echo "R-Docker-Server has been cloned " 
 else
-    echo "Warning: Shiny-Docker-Server does not exist where expected, attempting to pull."
+    echo "Warning: R-Docker-Server does not exist where expected, attempting to pull."
     git clone https://github.com/trenchproject/R-Docker-Server.git
 fi
 
