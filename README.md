@@ -12,7 +12,7 @@ Then, ssh into the instance using a keypair and execute the following commands
 3. Make the script executable
 `chmod +x ./R-Docker-Server/build.sh`
 4. Execute the script (This may take several minutes)
-`./R-Docker-Server/build`
+`./R-Docker-Server/build.sh`
 
 
 After the script has finished executing, 
