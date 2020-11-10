@@ -9,12 +9,10 @@ Then, ssh into the instance using a keypair and execute the following commands
 `sudo yum install git -y`
 2. Clone this repository 
 `git clone https://github.com/trenchproject/R-Docker-Server.git`
-3. Enter the cloned repository 
-`cd R-Docker-Server`
-4. Make the script executable
-`chmod +x build.sh`
-5. Execute the script (This may take several minutes)
-`./build`
+3. Make the script executable
+`chmod +x ./R-Docker-Server/build.sh`
+4. Execute the script (This may take several minutes)
+`./R-Docker-Server/build`
 
 
 After the script has finished executing, 
