@@ -23,6 +23,7 @@ echo "Setting up Docker"
 cd ~/
 mkdir rstudio_shared
 sudo chmod 777 ./rstudio_shared/
+docker login
 
 echo "Spinning up RStudio server"
 sudo docker run -e PASSWORD=$passwd -e USER=$uname -d -p 8787:8787 -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
