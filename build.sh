@@ -18,7 +18,7 @@ sudo amazon-linux-extras install docker -y
 sudo service docker start 
 sudo usermod -a -G docker ec2-user
 
-echo "Setting up Docker
+echo "Setting up Docker"
 cd ~/
 mkdir rstudio_container
 cd ~/rstudio_container
