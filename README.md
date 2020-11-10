@@ -23,5 +23,5 @@ After the script has finished executing,
 - To visit a specific RShiny app, navigate to <my_public_ip>/my_app_repository_name
 
 Note: The inbound security group rules associated with the EC2 instance must be modified to include the following protocols in order to access your newly constructed R ecosystem. (Using the R-Docker-Server security group provides this access)
-- Port 80 from anywhere (Webserver/ RShiny Server)
-- Port 8787 from anywhere (RStudio Server) 
+- Port **80** from **anywhere** (Webserver/ RShiny Server)
+- Port **8787** from **anywhere** (RStudio Server) 
