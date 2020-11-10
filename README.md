@@ -12,7 +12,7 @@ Then, ssh into the instance using a keypair and execute the following commands
 3. Make the script executable: 
 `chmod +x ./R-Docker-Server/build.sh`
 4. Execute the script with proper flags (This may take several minutes): 
-`./R-Docker-Server/build.sh -n [Desired RStudio Username] -p [Desired RStudio Password] -u [Docker username] -c [Docker password]`
+`./R-Docker-Server/build.sh -u [Desired RStudio Username] -p [Desired RStudio Password]`
 
 After the script has finished executing, 
 - The RStudio server will be available via a browser at <my_public_ip>:8787 
