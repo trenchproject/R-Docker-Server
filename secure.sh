@@ -12,13 +12,13 @@ mkdir nginx
 mkdir certbot
 cd ..
 cp ./R-Docker-Server/app.conf ./data/nginx/
-cp ./R-Docker-Server/docker-compose.yml ./data/nginx/
-cp ./R-Docker-Server/init-letsencrypt.sh ./data/nginx/
+cp ./R-Docker-Server/docker-compose.yml ./
+cp ./R-Docker-Server/init-letsencrypt.sh ./
 
 # Change for relative path
-chmod +x ./data/nginx/init-letsencrypt.sh
-sudo ./data/nginx/init-letsencrypt.sh
+chmod +x ./init-letsencrypt.sh
+sudo ./init-letsencrypt.sh
 
 # Run NGINX and Let's Encrypt
-cd R-Docker-Server
+#cd R-Docker-Server
 docker-compose up 
