@@ -11,8 +11,6 @@ Then, ssh into the instance using a keypair and execute the following commands
 `git clone https://github.com/trenchproject/R-Docker-Server.git`
 3. Make the scripts executable: 
  - `chmod +x ./R-Docker-Server/*.sh`
- - `chmod +x ./R-Docker-Server/containers.sh`
- - `chmod +x ./R-Docker-Server/secure.sh`
 4. Execute the script `build.sh` with proper flags to install and configure Docker (This will terminate the ssh session and may take several minutes): 
 `./R-Docker-Server/build.sh`
 5. Execute the script `containers.sh` with proper flags to build and run R server containers (This may take several minutes): 
