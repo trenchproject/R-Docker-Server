@@ -21,15 +21,13 @@ sudo usermod -a -G docker ec2-user
 echo "Setting up Docker"
 cd ~/
 mkdir rstudio_container
-cd ~/rstudio_container
-sudo chmod 777 rstudio_container/
+sudo chmod 777 ./rstudio_container/
 
 echo "Spinning up RStudio server"
 sudo docker run -e PASSWORD=$passwd -d -p 8787:8787 -v /home/ec2-user/rstudio_docker/:/home/rstudio/rstudio_docker rocker/tidyverse
 echo "RStudio server is now online, connect in a browser at my_public_ip:8787"
 echo "Shared filesystem is located at /home/ec2-user/rstudio_docker/"
 
-cd ~/
 if [ -d "~/Shiny-Docker-Server" ] 
 then
     echo "Shiny-Docker-Server has been cloned " 
