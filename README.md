@@ -23,5 +23,5 @@ After the script has finished executing,
 - To visit a specific RShiny app, navigate to map.trenchproject.com/<my_app_repository_name>
 
 ***Note:*** The inbound security group rules associated with the EC2 instance must be modified to include the following protocols in order to allow access to your newly constructed R ecosystem. If you used the R-Docker-Server security group when creating your instance, don't fret it has been done already!
-- Port **80** from **anywhere** (Webserver/ RShiny Server)
-- Port **443** from **anywhere** (Webserver/ RShiny Server)
+- Port **80** from **anywhere** (Webserver- RShiny and RStudio)
+- Port **443** from **anywhere** (Webserver- RShiny and RStudio)
