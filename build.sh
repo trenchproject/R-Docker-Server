@@ -1,13 +1,11 @@
 #!/bin/bash
 
 # Parse command line args
-while getopts n:p:u:c: flag
+while getopts u:p: flag
 do
     case "${flag}" in
-        n) uname=${OPTARG};;
+        u) uname=${OPTARG};;
         p) passwd=${OPTARG};;
-        u) duser=${OPTARG};;
-        c) dpass=${OPTARG};;
     esac
 done
 
