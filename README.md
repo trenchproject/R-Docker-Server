@@ -5,13 +5,13 @@ This repository contains a build script to install and run a docker image (also 
 ## Execution 
 To use this repository to create a new RShiny and RStudio Docker based server, create a new Linux 2 EC2 instance (suggest using a medium instance with >=25gb storage and >=4gb memory). If you create it with the security group "R-Docker-Server", you will automatically provide access to relevant ports.
 Then, ssh into the instance using a keypair and execute the following commands 
-1. Install Git
+1. Install Git: 
 `sudo yum install git -y`
-2. Clone this repository 
+2. Clone this repository: 
 `git clone https://github.com/trenchproject/R-Docker-Server.git`
-3. Make the script executable
+3. Make the script executable: 
 `chmod +x ./R-Docker-Server/build.sh`
-4. Execute the script (This may take several minutes)
+4. Execute the script (This may take several minutes): 
 `./R-Docker-Server/build.sh`
 
 
