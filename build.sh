@@ -31,10 +31,17 @@ echo "Shared filesystem is located at /home/ec2-user/rstudio_docker/"
 cd ~/
 git pull https://github.com/trenchproject/Shiny-Docker-Server.git
 cd Shiny-Docker-Server
+echo "Building RShiny server"
 docker build -t shiny-server .
+echo "Running RShiny server"
+sudo docker run -d -p 80:3838 -v /srv/shinyapps/:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server
 
+# Pull apps from github (TO ADD MORE APPS: add a git pull line below for any additional repositories)
 cd /srv/shinyapps/
 git pull https://github.com/trenchproject/Climate-Change-Metabolism.git
 git pull https://github.com/icaruso21/Insect-Phenology-Forecaster.git
 git pull https://github.com/trenchproject/RShiny_robomussels.git
 git pull https://github.com/trenchproject/RShiny_Lizards.git
+echo "The following apps have been pulled to the shiny server"
+ls -l
+echo "Debug logs are available at /srv/shinylog/"
