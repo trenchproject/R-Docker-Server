@@ -29,7 +29,14 @@ echo "RStudio server is now online, connect in a browser at my_public_ip:8787"
 echo "Shared filesystem is located at /home/ec2-user/rstudio_docker/"
 
 cd ~/
-git pull https://github.com/trenchproject/Shiny-Docker-Server.git
+if [ -d "~/Shiny-Docker-Server" ] 
+then
+    echo "Shiny-Docker-Server has been cloned " 
+else
+    echo "Warning: Shiny-Docker-Server does not exist where expected, attempting to pull."
+    git clone https://github.com/trenchproject/Shiny-Docker-Server.git
+fi
+
 cd Shiny-Docker-Server
 echo "Building RShiny server"
 docker build -t shiny-server .
@@ -38,10 +45,10 @@ sudo docker run -d -p 80:3838 -v /srv/shinyapps/:/srv/shiny-server/ -v /srv/shin
 
 # Pull apps from github (TO ADD MORE APPS: add a git pull line below for any additional repositories)
 cd /srv/shinyapps/
-git pull https://github.com/trenchproject/Climate-Change-Metabolism.git
-git pull https://github.com/icaruso21/Insect-Phenology-Forecaster.git
-git pull https://github.com/trenchproject/RShiny_robomussels.git
-git pull https://github.com/trenchproject/RShiny_Lizards.git
+git clone https://github.com/trenchproject/Climate-Change-Metabolism.git
+git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git
+git clone https://github.com/trenchproject/RShiny_robomussels.git
+git clone https://github.com/trenchproject/RShiny_Lizards.git
 echo "The following apps have been pulled to the shiny server"
 ls -l
 echo "Debug logs are available at /srv/shinylog/"
