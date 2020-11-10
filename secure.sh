@@ -18,4 +18,5 @@ chmod +x ./data/nginx/init-letsencrypt.sh
 sudo ./data/nginx/init-letsencrypt.sh
 
 # Run NGINX and Let's Encrypt
-docker-compose up
+cd R-Docker-Server
+docker-compose up 
