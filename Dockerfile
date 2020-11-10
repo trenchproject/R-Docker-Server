@@ -6,6 +6,7 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     libudunits2-dev \
     libpoppler-cpp-dev \
+    libgdal-dev \
     libproj-dev
 
 
