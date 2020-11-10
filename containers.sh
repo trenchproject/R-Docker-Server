@@ -26,10 +26,10 @@ sudo docker run -d -p 80:3838 -v /srv/shinyapps/:/srv/shiny-server/ -v /srv/shin
 
 # Pull apps from github (TO ADD MORE APPS: add a git pull line below for any additional repositories)
 cd /srv/shinyapps/
-git clone https://github.com/trenchproject/Climate-Change-Metabolism.git
-git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git
-git clone https://github.com/trenchproject/RShiny_robomussels.git
-git clone https://github.com/trenchproject/RShiny_Lizards.git
+sudo git clone https://github.com/trenchproject/Climate-Change-Metabolism.git
+sudo git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git
+sudo git clone https://github.com/trenchproject/RShiny_robomussels.git
+sudo git clone https://github.com/trenchproject/RShiny_Lizards.git
 echo "The following apps have been pulled to the shiny server"
 ls -l
 echo "Debug logs are available at /srv/shinylog/"
