@@ -35,7 +35,6 @@ RUN install2.r --error \
     shinyBS \
     data.table \
     shinyjs \
-    shinysky \
     shinythemes \
     shinyWidgets \
     maps 
