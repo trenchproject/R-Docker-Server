@@ -18,6 +18,6 @@ Then, ssh into the instance using a keypair and execute the following commands
 
 
 After the script has finished executing, 
-- The RStudio server will be available via a browser at my_public_ip:8787 
-- The RShiny apps are available via a browser at my_public_ip
-- To visit a specific RShiny app, navigate to my_public_ip/my_app_repository_name
+- The RStudio server will be available via a browser at <my_public_ip>:8787 
+- The RShiny apps are available via a browser at <my_public_ip>
+- To visit a specific RShiny app, navigate to <my_public_ip>/my_app_repository_name
