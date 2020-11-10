@@ -17,9 +17,9 @@ Then, ssh into the instance using a keypair and execute the following commands
 `./R-Docker-Server/containers.sh -u [Desired RStudio Username] -p [Desired RStudio Password] -e [Contact email for Let's Encrypt]` 
 
 After the script has finished executing, 
-- The RStudio server will be available via a browser at <my_public_ip>:8787 
-- The RShiny apps are available via a browser at <my_public_ip>
-- To visit a specific RShiny app, navigate to <my_public_ip>/my_app_repository_name
+- The RStudio server will be available via a browser at rstudio.trenchproject.com
+- The RShiny apps are available via a browser at map.trenchproject.com
+- To visit a specific RShiny app, navigate to map.trenchproject.com/<my_app_repository_name>
 
 ***Note:*** The inbound security group rules associated with the EC2 instance must be modified to include the following protocols in order to allow access to your newly constructed R ecosystem. If you used the R-Docker-Server security group when creating your instance, don't fret it has been done already!
 - Port **80** from **anywhere** (Webserver/ RShiny Server)
