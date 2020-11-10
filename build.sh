@@ -1,11 +1,13 @@
 #!/bin/bash
 
 # Parse command line args
-while getopts u:p: flag
+while getopts n:p:u:c: flag
 do
     case "${flag}" in
-        u) uname=${OPTARG};;
+        n) uname=${OPTARG};;
         p) passwd=${OPTARG};;
+        u) duser=${OPTARG};;
+        c) dpass=${OPTARG};;
     esac
 done
 
@@ -23,7 +25,7 @@ echo "Setting up Docker"
 cd ~/
 mkdir rstudio_shared
 sudo chmod 777 ./rstudio_shared/
-docker login
+docker login -u $duser -p $dpass
 
 echo "Spinning up RStudio server"
 sudo docker run -e PASSWORD=$passwd -e USER=$uname -d -p 8787:8787 -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
