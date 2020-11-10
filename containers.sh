@@ -1,3 +1,12 @@
+# Parse command line args
+while getopts u:p: flag
+do
+    case "${flag}" in
+        u) uname=${OPTARG};;
+        p) passwd=${OPTARG};;
+    esac
+done
+
 echo "Spinning up RStudio server"
 sudo docker run -e PASSWORD=$passwd -e USER=$uname -d -p 8787:8787 -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
 echo "RStudio server is now online, connect in a browser at my_public_ip:8787"
