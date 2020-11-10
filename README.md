@@ -13,10 +13,8 @@ Then, ssh into the instance using a keypair and execute the following commands
 `chmod +x ./R-Docker-Server/*.sh`
 4. Execute the script `build.sh` with proper flags to install and configure Docker (This will terminate the ssh session and may take several minutes): 
 `./R-Docker-Server/build.sh`
-5. Execute the script `containers.sh` with proper flags to build and run R server containers (This may take several minutes): 
+5. Execute the script `containers.sh` with proper flags to build, run, and secure R server containers (This may take several minutes): 
 `./R-Docker-Server/containers.sh -u [Desired RStudio Username] -p [Desired RStudio Password] -e [Contact email for Let's Encrypt]` 
-5. Execute the script `secure.sh` to build and configure NGINX and Let's Encrypt containers to secure access to webserver (This may take several minutes): 
-`./R-Docker-Server/secure.sh`
 
 After the script has finished executing, 
 - The RStudio server will be available via a browser at <my_public_ip>:8787 
