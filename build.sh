@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # Parse command line args
-while getopts p: flag
+while getopts u:p: flag
 do
     case "${flag}" in
+        u) uname=${OPTARG};;
         p) passwd=${OPTARG};;
     esac
 done
@@ -24,11 +25,11 @@ mkdir rstudio_shared
 sudo chmod 777 ./rstudio_shared/
 
 echo "Spinning up RStudio server"
-sudo docker run -e PASSWORD=$passwd -d -p 8787:8787 -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
+sudo docker run -e PASSWORD=$passwd -e USER=$uname -d -p 8787:8787 -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
 echo "RStudio server is now online, connect in a browser at my_public_ip:8787"
 echo "Shared filesystem is located at /home/ec2-user/rstudio_docker/"
 
-if [ -d "~/R-Docker-Server" ] 
+if [ -d "~/R-Docker-Server/" ] 
 then
     echo "R-Docker-Server has been cloned " 
 else
@@ -36,7 +37,7 @@ else
     git clone https://github.com/trenchproject/R-Docker-Server.git
 fi
 
-cd R-Docker-Server
+cd ~/R-Docker-Server
 echo "Building RShiny server"
 docker build -t shiny-server .
 echo "Running RShiny server"
