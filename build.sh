@@ -1,14 +1,5 @@
 #!/bin/bash
 
-# Parse command line args
-while getopts u:p: flag
-do
-    case "${flag}" in
-        u) uname=${OPTARG};;
-        p) passwd=${OPTARG};;
-    esac
-done
-
 # Install, Build and Run Docker
 echo "Updating ec2 instance and installing git"
 sudo yum update -y
