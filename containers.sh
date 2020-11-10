@@ -15,7 +15,7 @@ sudo docker run --detach --name nginx-proxy-letsencrypt --volumes-from nginx-pro
 
 echo "Spinning up RStudio server"
 #sudo docker run -e PASSWORD=$passwd -e USER=$uname -d -p 8787:8787 -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
-sudo docker run -e PASSWORD=$passwd -e USER=$uname -d --expose 8787 -env "VIRTUAL_HOST=rstudio.trenchproject.com" --env "VIRTUAL_PORT=8787" --env "LETSENCRYPT_HOST=rstudio.trenchproject.com" --env "LETSENCRYPT_EMAIL=$email" -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
+sudo docker run -e PASSWORD=$passwd -e USER=$uname -d --expose 8787 -env "VIRTUAL_HOST=rstudio.trenchproject.com" --env "VIRTUAL_PORT=8787" --env "LETSENCRYPT_HOST=rstudio.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
 
 echo "RStudio server is now online, connect in a browser at rstudio.trenchproject.com"
 echo "Shared filesystem is located at /home/ec2-user/rstudio_docker/"
