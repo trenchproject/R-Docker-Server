@@ -5,7 +5,9 @@ MAINTAINER Isaac Caruso <icaruso21@amherst.edu>
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     libudunits2-dev \
-    libpoppler-cpp-dev
+    libpoppler-cpp-dev \
+    libproj-dev
+
 
 RUN install2.r --error \
     rnoaa \
