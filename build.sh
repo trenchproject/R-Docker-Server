@@ -20,7 +20,7 @@ sudo usermod -a -G docker ec2-user
 
 echo "Setting up Docker
 mkdir rstudio_container
-cd rstudio_container
+cd ~/rstudio_container
 sudo chmod 777 rstudio_container/
 
 echo "Spinning up RStudio server"
@@ -28,4 +28,13 @@ sudo docker run -e PASSWORD=$passwd -d -p 8787:8787 -v /home/ec2-user/rstudio_do
 echo "RStudio server is now online, connect in a browser at my_public_ip:8787"
 echo "Shared filesystem is located at /home/ec2-user/rstudio_docker/"
 
+cd ~/
 git pull https://github.com/trenchproject/Shiny-Docker-Server.git
+cd Shiny-Docker-Server
+docker build -t shiny-server .
+
+cd /srv/shinyapps/
+git pull https://github.com/trenchproject/Climate-Change-Metabolism.git
+git pull https://github.com/icaruso21/Insect-Phenology-Forecaster.git
+git pull https://github.com/trenchproject/RShiny_robomussels.git
+git pull https://github.com/trenchproject/RShiny_Lizards.git
