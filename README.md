@@ -14,7 +14,7 @@ Then, ssh into the instance using a keypair and execute the following commands
 4. Execute the script `build.sh` with proper flags to install and configure Docker (This will terminate the ssh session and may take several minutes): 
 `./R-Docker-Server/build.sh`
 5. Execute the script `containers.sh` with proper flags to build, run, and secure R server containers (This may take several minutes): 
-`./R-Docker-Server/containers.sh -u [Desired RStudio Username] -p [Desired RStudio Password] -e [Contact email for Let's Encrypt]` 
+`./R-Docker-Server/containers.sh -u [Desired RStudio Username] -p [Desired RStudio Password]` 
 
 After the script has finished executing, 
 - The RStudio server will be available via a browser at rstudio.trenchproject.com
