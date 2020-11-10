@@ -37,7 +37,7 @@ else
     git clone https://github.com/trenchproject/R-Docker-Server.git
 fi
 
-cd Shiny-Docker-Server
+cd R-Docker-Server
 echo "Building RShiny server"
 docker build -t shiny-server .
 echo "Running RShiny server"
