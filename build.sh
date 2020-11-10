@@ -29,6 +29,7 @@ sudo docker run -e PASSWORD=$passwd -e USER=$uname -d -p 8787:8787 -v /home/ec2-
 echo "RStudio server is now online, connect in a browser at my_public_ip:8787"
 echo "Shared filesystem is located at /home/ec2-user/rstudio_docker/"
 
+ls
 if [ -d "~/R-Docker-Server/" ] 
 then
     echo "R-Docker-Server has been cloned " 
@@ -37,9 +38,9 @@ else
     git clone https://github.com/trenchproject/R-Docker-Server.git
 fi
 
-cd ~/R-Docker-Server
+#cd ~/R-Docker-Server
 echo "Building RShiny server"
-docker build -t shiny-server .
+docker build -t shiny-server ~/R-Docker-Server/.
 echo "Running RShiny server"
 sudo docker run -d -p 80:3838 -v /srv/shinyapps/:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server
 
