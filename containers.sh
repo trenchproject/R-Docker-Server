@@ -45,5 +45,5 @@ echo "###   The following images are ready to be ran"
 docker images 
 echo "###   The following containers are currently running"
 docker ps 
-echo "##    More commands can be found using docker --help"
+echo "###    More commands can be found using docker --help"
 
