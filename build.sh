@@ -30,11 +30,10 @@ echo "RStudio server is now online, connect in a browser at my_public_ip:8787"
 echo "Shared filesystem is located at /home/ec2-user/rstudio_docker/"
 
 ls
-if [ -d "~/R-Docker-Server/" ] 
+if [ -d "~/R-Docker-Server" ] 
 then
     echo "R-Docker-Server has been cloned " 
 else
-    echo "Warning: R-Docker-Server does not exist where expected, attempting to pull."
     git clone https://github.com/trenchproject/R-Docker-Server.git
 fi
 
