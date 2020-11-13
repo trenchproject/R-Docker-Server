@@ -12,8 +12,8 @@ sudo usermod -a -G docker ec2-user
 
 echo "###   Setting up Docker"
 cd ~/
-mkdir rstudio_shared
-sudo chmod 777 ./rstudio_shared/
+mkdir r_shared
+sudo chmod 777 ./r_shared/
 #docker login -u $duser -p $dpass
 sudo groupadd docker
 sudo usermod -aG docker $USER
