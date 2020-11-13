@@ -48,4 +48,4 @@ docker images
 echo "###   The following containers are currently running"
 docker ps 
 echo "###    More commands can be found using docker --help"
-cp 
+sudo cp /home/ec2-user/R-Docker-Server/refreshServer.sh /etc/cron.hourly/
