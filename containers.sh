@@ -38,6 +38,8 @@ sudo git clone https://github.com/trenchproject/Climate-Change-Metabolism.git
 sudo git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git
 sudo git clone https://github.com/trenchproject/RShiny_robomussels.git
 sudo git clone https://github.com/trenchproject/RShiny_Lizards.git
+sudo git clone https://github.com/trenchproject/RShiny_BiophysicalModelMap.git
+
 echo "###   The following apps have been pulled to the shiny server"
 ls -l
 echo "###   Debug logs are available at /srv/shinylog/"
@@ -46,4 +48,4 @@ docker images
 echo "###   The following containers are currently running"
 docker ps 
 echo "###    More commands can be found using docker --help"
-
+cp 
