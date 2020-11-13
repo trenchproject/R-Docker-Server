@@ -41,7 +41,11 @@ RUN install2.r --error \
     shinyjs \
     shinythemes \
     shinyWidgets \
-    maps 
+    maps \
+    ncdf4 \
+    sf \
+    tidyr \
+    raster 
     
 
 # RUN R -e "install.packages(pkgs=c('shiny', 'tidyverse', 'rnoaa', 'plotly', 'lubridate', 'zoo', 'shinyWidgets', 'shinycssloaders', 'shinytoastr', 'mathjaxr', 'leaflet', 'mosaic', 'taxize', 'raster', 'rasterVis', 'hash', 'rgdal', 'shinyalert', 'shinyglide', 'cicerone'), repos='https://cran.rstudio.com/')" 
