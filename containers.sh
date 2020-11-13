@@ -49,6 +49,6 @@ echo "###   The following containers are currently running"
 docker ps 
 echo "###    More commands can be found using docker --help"
 
-sudo chmod +x /home/ec2-user/R-Docker-Server/refreshServer.sh
+sudo chmod +x /home/ec2-user/R-Docker-Server/*.sh
 sudo cp /home/ec2-user/R-Docker-Server/refreshServer.sh /etc/cron.hourly/
 
