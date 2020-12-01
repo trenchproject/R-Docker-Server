@@ -8,9 +8,9 @@ RUN mkdir /data
 VOLUME /data
 
 # Pull Git Repos
-RUN sudo git clone https://github.com/trenchproject/Climate-Change-Metabolism.git \
-    sudo git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git \
-    sudo git clone https://github.com/trenchproject/RShiny_robomussels.git \
-    sudo git clone https://github.com/trenchproject/RShiny_Lizards.git \
-    sudo git clone https://github.com/trenchproject/RShiny_BiophysicalModelMap.git \
-    sudo git clone https://github.com/trenchproject/RShiny_PlantPhenology 
+RUN git clone https://github.com/trenchproject/Climate-Change-Metabolism.git \
+    git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git \
+    git clone https://github.com/trenchproject/RShiny_robomussels.git \
+    git clone https://github.com/trenchproject/RShiny_Lizards.git \
+    git clone https://github.com/trenchproject/RShiny_BiophysicalModelMap.git \
+    git clone https://github.com/trenchproject/RShiny_PlantPhenology 
