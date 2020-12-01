@@ -18,13 +18,15 @@ echo "###   Creating shared volume"
 
 
 # Pull apps from github (TO ADD MORE APPS: add a git pull line below for any additional repositories)
-cd /home/ec2-user/RShared/
-sudo git clone https://github.com/trenchproject/Climate-Change-Metabolism.git
-sudo git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git
-sudo git clone https://github.com/trenchproject/RShiny_robomussels.git
-sudo git clone https://github.com/trenchproject/RShiny_Lizards.git
-sudo git clone https://github.com/trenchproject/RShiny_BiophysicalModelMap.git
-sudo git clone https://github.com/trenchproject/RShiny_PlantPhenology
+cd ./R-Docker-Server/dat/
+#sudo git clone https://github.com/trenchproject/Climate-Change-Metabolism.git
+#sudo git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git
+#sudo git clone https://github.com/trenchproject/RShiny_robomussels.git
+#sudo git clone https://github.com/trenchproject/RShiny_Lizards.git
+#sudo git clone https://github.com/trenchproject/RShiny_BiophysicalModelMap.git
+#sudo git clone https://github.com/trenchproject/RShiny_PlantPhenology
+docker build -t data .
+docker run -name r-data data true
 
 cd /home/ec2-user/
 
