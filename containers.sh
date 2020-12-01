@@ -26,7 +26,7 @@ sudo git clone https://github.com/trenchproject/RShiny_Lizards.git
 sudo git clone https://github.com/trenchproject/RShiny_BiophysicalModelMap.git
 sudo git clone https://github.com/trenchproject/RShiny_PlantPhenology
 
-cd/home/ec2-user/
+cd /home/ec2-user/
 
 echo "###   Spinning up RStudio server"
 #sudo docker run -e PASSWORD=$passwd -e USER=$uname -d -p 8787:8787 -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
