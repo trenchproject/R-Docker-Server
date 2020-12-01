@@ -12,7 +12,7 @@ sudo usermod -a -G docker ec2-user
 
 echo "###   Setting up Docker"
 cd ~/
-mkdir r_shared
+mkdir RShared
 sudo chmod 777 ./RShared/
 #docker login -u $duser -p $dpass
 sudo groupadd docker
