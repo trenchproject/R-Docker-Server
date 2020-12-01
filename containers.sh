@@ -13,7 +13,7 @@ docker run --detach --name nginx-proxy --publish 80:80 --publish 443:443 --volum
 sudo docker run --detach --name nginx-proxy-letsencrypt --volumes-from nginx-proxy --volume /var/run/docker.sock:/var/run/docker.sock:ro --env "DEFAULT_EMAIL=icaruso21@amherst.edu" jrcs/letsencrypt-nginx-proxy-companion
 
 echo "###   Creating shared volume"
-docker volume create --name r_shared
+docker volume create --name RShared
 
 
 echo "###   Spinning up RStudio server"
