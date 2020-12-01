@@ -37,7 +37,7 @@ echo "###   Running RShiny server"
 sudo docker run --name shiny -d --expose 3838 --env "VIRTUAL_HOST=map.trenchproject.com" --env "VIRTUAL_PORT=3838" --env "LETSENCRYPT_HOST=map.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" -v RShared:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server
 
 # Pull apps from github (TO ADD MORE APPS: add a git pull line below for any additional repositories)
-cd /home/ec2-user/r_shared/
+cd /home/ec2-user/RShared/
 sudo git clone https://github.com/trenchproject/Climate-Change-Metabolism.git
 sudo git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git
 sudo git clone https://github.com/trenchproject/RShiny_robomussels.git
