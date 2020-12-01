@@ -12,9 +12,13 @@ echo "###   Preparing reverse proxy, https, and certification for secure contain
 docker run --detach --name nginx-proxy --publish 80:80 --publish 443:443 --volume /etc/nginx/certs --volume /etc/nginx/vhost.d --volume /usr/share/nginx/html --volume /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 sudo docker run --detach --name nginx-proxy-letsencrypt --volumes-from nginx-proxy --volume /var/run/docker.sock:/var/run/docker.sock:ro --env "DEFAULT_EMAIL=icaruso21@amherst.edu" jrcs/letsencrypt-nginx-proxy-companion
 
+echo "###   Creating shared volume"
+docker volume create --name r_shared
+
+
 echo "###   Spinning up RStudio server"
 #sudo docker run -e PASSWORD=$passwd -e USER=$uname -d -p 8787:8787 -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
-sudo docker run  --name rstudio -e PASSWORD=$passwd -e USER=$uname -d --expose 8787 --env "VIRTUAL_HOST=rstudio.trenchproject.com" --env "VIRTUAL_PORT=8787" --env "LETSENCRYPT_HOST=rstudio.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" -v /home/ec2-user/r_shared/:/home/rstudio/shiny_apps rocker/tidyverse
+sudo docker run  --name rstudio -e PASSWORD=$passwd -e USER=$uname -d --expose 8787 --env "VIRTUAL_HOST=rstudio.trenchproject.com" --env "VIRTUAL_PORT=8787" --env "LETSENCRYPT_HOST=rstudio.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" -v RShared:/home/rstudio/shiny_apps rocker/tidyverse
 
 echo "###   RStudio server is now online, connect in a browser at rstudio.trenchproject.com"
 echo "Shared filesystem is located at /home/ec2-user/r_docker/"
@@ -30,7 +34,7 @@ ls
 docker build -t shiny-server .
 echo "###   Running RShiny server"
 #sudo docker run -d -p 3838:3838 -v /srv/shinyapps/:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server
-sudo docker run --name shiny -d --expose 3838 --env "VIRTUAL_HOST=map.trenchproject.com" --env "VIRTUAL_PORT=3838" --env "LETSENCRYPT_HOST=map.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" -v /home/ec2-user/r_shared/:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server
+sudo docker run --name shiny -d --expose 3838 --env "VIRTUAL_HOST=map.trenchproject.com" --env "VIRTUAL_PORT=3838" --env "LETSENCRYPT_HOST=map.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" -v RShared:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server
 
 # Pull apps from github (TO ADD MORE APPS: add a git pull line below for any additional repositories)
 cd /home/ec2-user/r_shared/
