@@ -14,7 +14,7 @@ sudo docker run --detach --name nginx-proxy-letsencrypt --volumes-from nginx-pro
 
 echo "###   Creating shared volume"
 #docker volume create --name RShared
-sudo mkdir /RShared
+#sudo mkdir /RShared
 
 
 # Pull apps from github (TO ADD MORE APPS: add a git pull line below for any additional repositories)
