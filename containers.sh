@@ -39,6 +39,7 @@ sudo git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git
 sudo git clone https://github.com/trenchproject/RShiny_robomussels.git
 sudo git clone https://github.com/trenchproject/RShiny_Lizards.git
 sudo git clone https://github.com/trenchproject/RShiny_BiophysicalModelMap.git
+sudo git clone https://github.com/trenchproject/RShiny_PlantPhenology
 
 echo "###   The following apps have been pulled to the shiny server"
 ls -l
