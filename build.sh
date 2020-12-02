@@ -13,7 +13,9 @@ sudo usermod -a -G docker ec2-user
 echo "###   Setting up Docker"
 cd ~/
 mkdir RShared
-sudo chmod 777 ./RShared/
+sudo chmod 777 /srv/shinyapps/
+sudo chmod 777 /srv/shinylog/
+
 #docker login -u $duser -p $dpass
 sudo groupadd docker
 sudo usermod -aG docker $USER
