@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/ec2-user/r_shared/
+cd /srv/shinyapps/
 
 # Github Repositories (of shiny apps) to pull 
 sudo git pull https://github.com/trenchproject/Climate-Change-Metabolism.git
