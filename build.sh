@@ -11,8 +11,9 @@ sudo service docker start
 sudo usermod -a -G docker ec2-user
 
 echo "###   Setting up Docker"
-cd ~/
-mkdir RShared
+cd /srv/
+mkdir shinyapps
+mkdir shinylog
 sudo chmod 777 /srv/shinyapps/
 sudo chmod 777 /srv/shinylog/
 
