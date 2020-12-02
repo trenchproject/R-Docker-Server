@@ -17,18 +17,17 @@ echo "###   Creating shared volume"
 #sudo mkdir /RShared
 
 
-# Pull apps from github (TO ADD MORE APPS: add a git pull line below for any additional repositories)
-cd ./R-Docker-Server/dat/
-docker build -t data .
-docker run --name r-data data true
-cd ..
+#cd ./R-Docker-Server/dat/
+#docker build -t data .
+#docker run --name r-data data true
+#cd ..
 
-echo "###   Spinning up RStudio server"
+#echo "###   Spinning up RStudio server"
 #sudo docker run -e PASSWORD=$passwd -e USER=$uname -d -p 8787:8787 -v /home/ec2-user/rstudio_shared/:/home/rstudio/rstudio_docker rocker/tidyverse
-sudo docker run  --name rstudio -e PASSWORD=$passwd -e USER=$uname -d --expose 8787 --env "VIRTUAL_HOST=rstudio.trenchproject.com" --env "VIRTUAL_PORT=8787" --env "LETSENCRYPT_HOST=rstudio.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" --volumes-from r-data -v /data:/home/rstudio/shiny_apps rocker/tidyverse
+sudo docker run  --name rstudio -e PASSWORD=$passwd -e USER=$uname -d --expose 8787 --env "VIRTUAL_HOST=rstudio.trenchproject.com" --env "VIRTUAL_PORT=8787" --env "LETSENCRYPT_HOST=rstudio.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" -v /srv/shinyapps/:/home/rstudio/shiny_apps/ rocker/tidyverse
 
 echo "###   RStudio server is now online, connect in a browser at rstudio.trenchproject.com"
-echo "Shared filesystem is located at /home/ec2-user/RShared/"
+echo "Shared filesystem is located at /srv/shinyapps"
 
 ls
 if [ -d "~/R-Docker-Server" ]; then 
@@ -41,8 +40,9 @@ ls
 docker build -t shiny-server .
 echo "###   Running RShiny server"
 #sudo docker run -d -p 3838:3838 -v /srv/shinyapps/:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server
-sudo docker run --name shiny -d --expose 3838 --env "VIRTUAL_HOST=map.trenchproject.com" --env "VIRTUAL_PORT=3838" --env "LETSENCRYPT_HOST=map.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" --volumes-from r-data -v /data:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server
+sudo docker run --name shiny -d --expose 3838 --env "VIRTUAL_HOST=map.trenchproject.com" --env "VIRTUAL_PORT=3838" --env "LETSENCRYPT_HOST=map.trenchproject.com" --env "LETSENCRYPT_EMAIL=icaruso21@amherst.edu" -v /srv/shinyapps/:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ shiny-server # --volumes-from r-data
 
+# Pull apps from github (TO ADD MORE APPS: add a git pull line below for any additional repositories)
 #cd ./RShared
 #sudo git clone https://github.com/trenchproject/Climate-Change-Metabolism.git
 #sudo git clone https://github.com/icaruso21/Insect-Phenology-Forecaster.git
@@ -50,8 +50,6 @@ sudo docker run --name shiny -d --expose 3838 --env "VIRTUAL_HOST=map.trenchproj
 #sudo git clone https://github.com/trenchproject/RShiny_Lizards.git
 #sudo git clone https://github.com/trenchproject/RShiny_BiophysicalModelMap.git
 #sudo git clone https://github.com/trenchproject/RShiny_PlantPhenology
-
-
 #cd ..
 
 echo "###   The following apps have been pulled to the shiny server"
