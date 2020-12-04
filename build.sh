@@ -14,8 +14,14 @@ echo "###   Setting up Docker"
 
 sudo mkdir /srv/shinyapps
 sudo mkdir /srv/shinylog
+sudo mkdir /etc/nginx
+sudo mkdir /etc/nginx/certs
+
 sudo chmod 777 /srv/shinyapps/
 sudo chmod 777 /srv/shinylog/
+sudo chmod 777 /etc/nginx/
+sudo chmod 777 /etc/nginx/certs/
+
 
 #docker login -u $duser -p $dpass
 sudo groupadd docker
