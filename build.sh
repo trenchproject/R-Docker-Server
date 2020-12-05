@@ -5,6 +5,10 @@ echo "###   Updating ec2 instance and installing git"
 sudo yum update -y
 sudo yum install git -y
 
+echo "###   Installing R on EC2 Instance"
+sudo amazon-linux-extras enable R4
+sudo yum install R -y
+
 echo "###   Installing Docker" 
 sudo amazon-linux-extras install docker -y
 sudo service docker start 
