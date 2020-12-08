@@ -10,7 +10,9 @@ sudo amazon-linux-extras enable R4
 sudo yum install R -y
 
 echo "###   Installing R packages for cron updates on EC2 Instance"
-sudo R -e "install.packages(c('tidyverse', 'mosaic', 'leaflet', 'lubridate', 'sp', 'raster'), repos='http://cran.us.r-project.org')"
+sudo R -e "install.packages(c('tidyverse', 'mosaic', 'leaflet', 'lubridate', 'sp', 'raster', 'stringr', 'sf'), repos='http://cran.us.r-project.org')"
+sudo R -e "devtools::install_github('mikejohnson51/AOI')"
+sudo R -e "devtools::install_github('mikejohnson51/climateR')"
 
 echo "###   Installing Docker" 
 sudo amazon-linux-extras install docker -y
