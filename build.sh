@@ -10,7 +10,7 @@ sudo amazon-linux-extras enable R4
 sudo yum install R -y
 
 echo "###   Installing R packages for cron updates on EC2 Instance"
-sudo R -e "install.packages(c('devtools', 'tidyverse', 'mosaic', 'leaflet', 'lubridate', 'sp', 'raster', 'stringr', 'sf'), repos='http://cran.us.r-project.org')"
+sudo R -e "install.packages(c('devtools', 'tidyverse', 'mosaic', 'latticeExtra', 'leaflet', 'lubridate', 'sp', 'raster', 'stringr', 'sf'), repos='http://cran.us.r-project.org')"
 sudo R -e "remotes::install_github('mikejohnson51/AOI')"
 sudo R -e "remotes::install_github('mikejohnson51/climateR')"
 
