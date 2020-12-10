@@ -10,7 +10,7 @@ sudo amazon-linux-extras enable R4
 sudo yum install R -y
 
 echo "###   Installing R packages for cron updates on EC2 Instance"
-sudo amazon-linux-extras install epel
+sudo amazon-linux-extras install epel -y
 sudo yum install udunits2-devel -y
 sudo yum install openssl-devel -y
 sudo yum install libcurl-devel -y
