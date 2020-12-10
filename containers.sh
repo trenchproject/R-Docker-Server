@@ -50,6 +50,7 @@ sudo git clone https://github.com/trenchproject/RShiny_robomussels.git
 sudo git clone https://github.com/trenchproject/RShiny_Lizards.git
 sudo git clone https://github.com/trenchproject/RShiny_BiophysicalModelMap.git
 sudo git clone https://github.com/trenchproject/RShiny_PlantPhenology
+sudo git clone https://github.com/trenchproject/RShiny_Microclim
 cd ~/
 
 echo "###   The following apps have been pulled to the shiny server"
