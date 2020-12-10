@@ -45,9 +45,9 @@ RUN install2.r --error \
     ncdf4 \
     sf \
     RCurl \
-    utils \
-    MALDIquant \
-    GEOquery
+    utils 
+   # MALDIquant \
+   # GEOquery
     
 
 # RUN R -e "install.packages(pkgs=c('shiny', 'tidyverse', 'rnoaa', 'plotly', 'lubridate', 'zoo', 'shinyWidgets', 'shinycssloaders', 'shinytoastr', 'mathjaxr', 'leaflet', 'mosaic', 'taxize', 'raster', 'rasterVis', 'hash', 'rgdal', 'shinyalert', 'shinyglide', 'cicerone'), repos='https://cran.rstudio.com/')" 
@@ -61,3 +61,4 @@ RUN R -e "devtools::install_github('JohnCoene/shinyscroll')"
 RUN R -e "devtools::install_github('mikejohnson51/AOI')"
 RUN R -e "devtools::install_github('mikejohnson51/climateR')"
 RUN R -e "devtools::install_github('seandavi/GEOquery')"
+RUN R -e "devtools::install_github('sgibb/MALDIquant')"
