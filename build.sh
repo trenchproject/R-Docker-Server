@@ -22,7 +22,7 @@ echo "### Adding necessary C packages for R libraries (https://gist.github.com/a
 
 
 
-sudo R -e "install.packages(c('rgdal', 'tidyverse', 'mosaic', 'latticeExtra', 'leaflet', 'lubridate', 'sp', 'raster', 'stringr', 'sf'), repos='http://cran.us.r-project.org')"
+sudo R -e "install.packages(c('remotes', 'rgdal', 'tidyverse', 'mosaic', 'latticeExtra', 'leaflet', 'lubridate', 'sp', 'raster', 'stringr', 'sf'), repos='http://cran.us.r-project.org')"
 sudo R -e "remotes::install_github('mikejohnson51/AOI')"
 sudo R -e "remotes::install_github('mikejohnson51/climateR')"
 
