@@ -40,4 +40,4 @@ RUN ls -la /code/*
 ## install R-packages
 # RUN Rscript /code/updatePhenologyHeatmap.R
 
-CMD Rscript /code/myScript.R
+CMD Rscript /code/updatePhenologyHeatmap.R
