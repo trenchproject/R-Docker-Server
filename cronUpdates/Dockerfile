@@ -24,7 +24,8 @@ RUN R -e "remotes::install_github('mikejohnson51/AOI')"
 RUN R -e "remotes::install_github('mikejohnson51/climateR')"
 
 ## create directories
-RUN mkdir -p /code
+RUN mkdir /code/
+
 RUN ls -la /code/*
 #RUN mkdir -p /code/dat
 # RUN mkdir -p /code/dat/species-overviews
