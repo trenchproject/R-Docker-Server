@@ -25,6 +25,7 @@ RUN R -e "remotes::install_github('mikejohnson51/climateR')"
 
 ## create directories
 RUN mkdir -p /code
+RUN ls -la /code/*
 #RUN mkdir -p /code/dat
 # RUN mkdir -p /code/dat/species-overviews
 # RUN mkdir -p /code/dat/npn_phenometrics
@@ -33,7 +34,7 @@ RUN mkdir -p /code
 COPY /srv/shinyapps/Insect-Phenology-Forecaster/ /code/
 #COPY /srv/shinyapps/Insect-Phenology-Forecaster/dat/ /dat/
 
-RUN ls -la /code/dat/*
+RUN ls -la /code/*
 
 ## install R-packages
 # RUN Rscript /code/updatePhenologyHeatmap.R
