@@ -9,7 +9,7 @@ RUN apt-get update \
     libproj-dev
     
 RUN install2.r --error \
-    remotes \
+    devtools \
     rgdal \
     tidyverse \
     mosaic \
