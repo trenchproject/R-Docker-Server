@@ -9,7 +9,7 @@ RUN apt-get update \
     libproj-dev
     
 RUN install2.r --error \
-    devtools \
+    remotes \
     rgdal \
     tidyverse \
     mosaic \
@@ -20,8 +20,8 @@ RUN install2.r --error \
     raster \
     sf
 
-RUN R -e "devtools::install_github('mikejohnson51/AOI')"
-RUN R -e "devtools::install_github('mikejohnson51/climateR')"
+RUN R -e "remotes::install_github('mikejohnson51/AOI')"
+RUN R -e "remotes::install_github('mikejohnson51/climateR')"
 
 ## create directories
 RUN mkdir -p /code
