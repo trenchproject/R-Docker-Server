@@ -26,7 +26,6 @@ RUN R -e "remotes::install_github('mikejohnson51/climateR')"
 ## create directories
 RUN mkdir /code/
 
-RUN ls -la /code/*
 #RUN mkdir -p /code/dat
 # RUN mkdir -p /code/dat/species-overviews
 # RUN mkdir -p /code/dat/npn_phenometrics
