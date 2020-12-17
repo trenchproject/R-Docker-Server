@@ -48,4 +48,6 @@ sudo chmod 777 /etc/nginx/certs/
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
+aws configure
+
 echo "###   Exit and rejoin SSH session to finish installation!"
