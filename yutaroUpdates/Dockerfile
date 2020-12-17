@@ -11,11 +11,7 @@ RUN apt-get update \
 RUN install2.r --error \
     remotes \
     rgdal \
-    tidyverse \
-    mosaic \
-    latticeExtra \
-    leaflet \
-    lubridate \
+    stringr \ 
     sp \
     raster \
     sf
@@ -39,4 +35,4 @@ RUN ls -la /code/*
 ## install R-packages
 # RUN Rscript /code/updatePhenologyHeatmap.R
 
-CMD Rscript /code/updatePhenologyHeatmap.R
+CMD Rscript /code/updates.R
