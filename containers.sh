@@ -62,7 +62,7 @@ echo "###   The following containers are currently running"
 docker ps 
 echo "###    More commands can be found using docker --help"
 
-cp /home/ec2-user/R-Docker-Server/cronUpdates/Dockerfile /srv/shinyapps/Insect-Phenology-Forecaster/Dockerfile
+sudo cp /home/ec2-user/R-Docker-Server/cronUpdates/Dockerfile /srv/shinyapps/Insect-Phenology-Forecaster/Dockerfile
 cd /srv/shinyapps/Insect-Phenology-Forecaster
 
 docker build -t isaac/updates .
