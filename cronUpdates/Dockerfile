@@ -31,7 +31,7 @@ RUN mkdir -p /code
 # RUN mkdir -p /code/dat/npn_phenometrics
 
 ## copy files
-COPY ./Insect-Phenology-Forecaster/ /code/
+COPY ./ /code/
 #COPY /srv/shinyapps/Insect-Phenology-Forecaster/dat/ /dat/
 
 RUN ls -la /code/*
