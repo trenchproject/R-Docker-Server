@@ -31,6 +31,9 @@ RUN mkdir -p /code/Forecasts/
 COPY ./Forecasts/ /code/Forecasts/
 COPY ./updates.R /code/updates.R
 COPY ./LastDate /code/LastDate
+COPY ./cb_2019_us_nation_5m.shp /code/cb_2019_us_nation_5m.shp
+COPY ./cb_2019_us_nation_5m.shx /code/cb_2019_us_nation_5m.shx
+
 
 #COPY /srv/shinyapps/Insect-Phenology-Forecaster/dat/ /dat/
 
