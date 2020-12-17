@@ -17,14 +17,14 @@ sudo yum install libcurl-devel -y
 sudo yum install libxml2-devel -y
 sudo yum install libjpeg-turbo-devel -y
 #sudo yum install gdal-devel -y
-sudo yum install gdal* expat* proj* -y
+#sudo yum install gdal* expat* proj* -y
 echo "### Adding necessary C packages for R libraries (https://gist.github.com/abelcallejo/e75eb93d73db6f163b076d0232fc7d7e)" 
 
 
 
-sudo R -e "install.packages(c('remotes', 'rgdal', 'tidyverse', 'mosaic', 'latticeExtra', 'leaflet', 'lubridate', 'sp', 'raster', 'stringr', 'sf'), repos='http://cran.us.r-project.org')"
-sudo R -e "remotes::install_github('mikejohnson51/AOI')"
-sudo R -e "remotes::install_github('mikejohnson51/climateR')"
+#sudo R -e "install.packages(c('remotes', 'rgdal', 'tidyverse', 'mosaic', 'latticeExtra', 'leaflet', 'lubridate', 'sp', 'raster', 'stringr', 'sf'), repos='http://cran.us.r-project.org')"
+#sudo R -e "remotes::install_github('mikejohnson51/AOI')"
+#sudo R -e "remotes::install_github('mikejohnson51/climateR')"
 
 echo "###   Installing Docker" 
 sudo amazon-linux-extras install docker -y
