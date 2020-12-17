@@ -21,13 +21,17 @@ RUN R -e "remotes::install_github('mikejohnson51/climateR')"
 
 ## create directories
 RUN mkdir -p /code
+RUN mkdir -p /code/Forecasts/
 
 #RUN mkdir -p /code/dat
 # RUN mkdir -p /code/dat/species-overviews
 # RUN mkdir -p /code/dat/npn_phenometrics
 
 ## copy files
-COPY ./ /code/
+COPY ./Forecasts/ /code/Forecasts/
+COPY ./updates.R /code/updates.R
+COPY ./LastDate /code/LastDate
+
 #COPY /srv/shinyapps/Insect-Phenology-Forecaster/dat/ /dat/
 
 RUN ls -la /code/*
