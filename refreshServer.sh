@@ -13,5 +13,3 @@ ls | xargs -I{} sudo git -C {} pull
 #sudo git pull https://github.com/trenchproject/RShiny_PlantPhenology
 aws s3 sync /srv/shinyapps/Insect-Phenology-Forecaster/dat/ s3://insect-phenology-map-shiny/ 
 aws s3 sync /srv/shinyapps/RShiny_Microclim/Data/ s3://microclim/
-
-touch mario.txt
