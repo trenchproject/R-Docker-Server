@@ -78,4 +78,4 @@ sudo cp /home/ec2-user/R-Docker-Server/refreshServer.sh /etc/cron.hourly/
 (crontab -l 2>/dev/null; echo "30 23 * * * docker run -i -t --rm -v /srv/shinyapps/Insect-Phenology-Forecaster:/code isaac/updates >> '/var/log/isaac_app_updates.log' 2>&1") | crontab -
 (crontab -l 2>/dev/null; echo "00 02 * * * docker run -i -t --rm -v /srv/shinyapps/RShiny_BiophysicalModelMap:/code yutaro/updates >> '/var/log/yutaro_app_updates.log' 2>&1") | crontab -
 
-aws s3 sync /srv/shinyapps/Insect-Phenology-Forecaster/dat/ s3://insect-phenology-map-shiny/ --include "*.gr*"
+aws s3 sync /srv/shinyapps/Insect-Phenology-Forecaster/dat/ s3://insect-phenology-map-shiny/ 
