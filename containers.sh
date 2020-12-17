@@ -62,8 +62,13 @@ echo "###   The following containers are currently running"
 docker ps 
 echo "###    More commands can be found using docker --help"
 
+cp /home/ec2-user/R-Docker-Server/cronUpdates/Dockerfile /srv/shinyapps/Dockerfile
+cd /srv/shinyapps
+
+docker build -t isaac/updates .
+
 sudo chmod +x /home/ec2-user/R-Docker-Server/*.sh
 sudo cp /home/ec2-user/R-Docker-Server/refreshServer.sh /etc/cron.hourly/
 (crontab -l 2>/dev/null; echo "30 22 * * * Rscript '/srv/shinyapps/RShiny_BiophysicalModelMap/updates.R' >> '/var/log/yutaro_app_updates.log' 2>&1") | crontab -
-(crontab -l 2>/dev/null; echo "30 22 * * * Rscript '/srv/shinyapps/Insect-Phenology-Forecaster/updatePhenologyHeatmap.R' >> '/var/log/isaac_app_updates.log' 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo "30 22 * * * docker run -i -t --rm -v /srv/shinyapps/Insect-Phenology-Forecaster:/code isaac/updates >> '/var/log/isaac_app_updates.log' 2>&1") | crontab -
 
