@@ -46,7 +46,9 @@ RUN install2.r --error \
     sf \
     RCurl \
     utils \
-    humidity
+    humidity \
+    RNCEP \ 
+    elevatr 
    # MALDIquant \
    # GEOquery
     
@@ -63,3 +65,5 @@ RUN R -e "devtools::install_github('mikejohnson51/AOI')"
 RUN R -e "devtools::install_github('mikejohnson51/climateR')"
 RUN R -e "devtools::install_github('seandavi/GEOquery')"
 RUN R -e "devtools::install_github('sgibb/MALDIquant')"
+RUN R -e "devtools::install_github('mrke/NicheMapR')"
+RUN R -e "devtools::install_github('ilyamaclean/microclima')"
