@@ -45,7 +45,8 @@ RUN install2.r --error \
     ncdf4 \
     sf \
     RCurl \
-    utils 
+    utils \
+    humidity
    # MALDIquant \
    # GEOquery
     
