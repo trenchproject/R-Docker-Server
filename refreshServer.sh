@@ -3,6 +3,7 @@
 cd /srv/shinyapps/
 
 #find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;
+ls | xargs -I{} sudo git -C {} reset --hard HEAD
 ls | xargs -I{} sudo git -C {} pull
 # Github Repositories (of shiny apps) to pull 
 #sudo git pull https://github.com/trenchproject/Climate-Change-Metabolism.git
