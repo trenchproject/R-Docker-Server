@@ -82,4 +82,6 @@ sudo chmod -R 777 /srv/shinyapps/RShiny_Microclim/Data/
 sudo chmod -R 777 /srv/shinyapps/Insect-Phenology-Forecaster/dat/
 
 aws s3 sync /srv/shinyapps/Insect-Phenology-Forecaster/dat/ s3://insect-phenology-map-shiny/ 
+aws s3 sync s3://insect-phenology-map-shiny/ /srv/shinyapps/Insect-Phenology-Forecaster/dat/ 
 aws s3 sync /srv/shinyapps/RShiny_Microclim/Data/ s3://microclim/
+aws s3 sync s3://microclim/ /srv/shinyapps/RShiny_Microclim/Data/
