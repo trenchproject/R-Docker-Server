@@ -50,7 +50,8 @@ RUN install2.r --error \
     utils \
     humidity \
     RNCEP \ 
-    elevatr 
+    elevatr \
+    USAboundariesData
    # MALDIquant \
    # GEOquery
     
