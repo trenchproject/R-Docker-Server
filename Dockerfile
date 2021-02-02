@@ -8,8 +8,9 @@ RUN apt-get update \
     libpoppler-cpp-dev \
     libgdal-dev \
     libproj-dev \
-    tcl8.5-dev \
-    tk8.5-dev
+    libtcl8.5-dev \
+    libtk8.5-dev \ 
+    libtcl-dev
 
 
 RUN install2.r --error \
