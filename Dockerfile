@@ -10,7 +10,9 @@ RUN apt-get update \
     libproj-dev \
     libtcl8.5-dev \
     libtk8.5-dev \ 
-    libtcl-dev
+    libtcl-dev \ 
+    tcl \
+    tk
 
 
 RUN install2.r --error \
