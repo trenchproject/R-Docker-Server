@@ -11,6 +11,8 @@ RUN apt-get update \
     tcl \
     tk
 
+RUN R -e "devtools::install_github('rstudio/shiny')"
+RUN R -e "devtools::install_github('ropensci/USAboundariesData')"
 
 RUN install2.r --error \
     rnoaa \
@@ -70,7 +72,6 @@ RUN R -e "devtools::install_github('seandavi/GEOquery')"
 RUN R -e "devtools::install_github('sgibb/MALDIquant')"
 RUN R -e "devtools::install_github('mrke/NicheMapR')"
 RUN R -e "devtools::install_github('ilyamaclean/microclima')"
-RUN R -e "devtools::install_github('rstudio/shiny')"
-RUN R -e "devtools::install_github('ropensci/USAboundariesData')"
+
 
 
