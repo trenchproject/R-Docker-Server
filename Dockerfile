@@ -50,8 +50,8 @@ RUN install2.r --error \
     utils \
     humidity \
     RNCEP \ 
-    elevatr \
-    USAboundariesData
+    elevatr 
+   # USAboundariesData
    # MALDIquant \
    # GEOquery
     
@@ -71,4 +71,6 @@ RUN R -e "devtools::install_github('sgibb/MALDIquant')"
 RUN R -e "devtools::install_github('mrke/NicheMapR')"
 RUN R -e "devtools::install_github('ilyamaclean/microclima')"
 RUN R -e "devtools::install_github('rstudio/shiny')"
+RUN R -e "devtools::install_github('ropensci/USAboundariesData')"
+
 
