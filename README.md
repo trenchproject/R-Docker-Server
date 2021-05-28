@@ -5,7 +5,7 @@ Hosted projects can be found at: [map.trenchproject.com](https://map.trenchproje
 ## Debugging in the R Docker Server
 Live code can be viewed at [rstudio.trenchproject.com](rstudio.trenchproject.com) with login.
 Further debugging requires ssh-ing into the EC2 instance using a keypair. Within the EC2 instance:
-- code location: `cd /srv/shinapps`
+- code location: `cd /srv/shinyapps`
 - print debugging logs: `docker logs shiny`
 - live containiners: `docker ps`
 
